@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, make_response
 from flask_cors import CORS
+import os
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
 
 from controller.authentication import login, logout, register
@@ -13,9 +14,9 @@ from controller.course_management import (courses_dashboard, domains_dashboard, 
                                           user_courses)
 
 app = Flask(__name__)
-app.secret_key = 'this_is_a_secret_key'
-app.config['JWT_SECRET_KEY'] = 'this_is_a_jwt_secret_key'
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
+app.secret_key = os.getenv('SECRET_KEY', 'fallback_secret_key')
+app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'fallback_jwt_secret_key')
+CORS(app, resources={r"/api/*": {"origins": os.getenv('CORS_ALLOWED_ORIGINS', '*').split(',')}}, supports_credentials=True)
 
 jwt = JWTManager(app)
 
@@ -56,6 +57,4 @@ app.add_url_rule('/api/user_courses', 'user_courses', user_courses, methods=['GE
 
 
 if __name__ == '__main__':
-    #with open('backend/ip_address.txt', 'r') as file:
-    #    ip_address = file.read().strip()
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=os.getenv('FLASK_DEBUG', 'false').lower() == 'true')
