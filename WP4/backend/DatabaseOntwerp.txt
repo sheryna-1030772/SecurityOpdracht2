@@ -1,0 +1,73 @@
+Roles 
+RoleID (PK)
+RoleName
+
+Users 
+userID(PK)
+Username
+Password
+RoleID (FK)
+FirstName
+Infix 
+LastName
+DomainID (FK)
+ClassID (FK)
+
+Classes
+ClassID
+ClassName
+
+Domains 
+DomainID(PK)
+DomainName
+
+Courses
+CourseID (PK)
+DomainID (FK)
+CourseName
+Description
+
+Instances 
+InstanceID (PK)
+CourseID (FK)
+Year
+Period
+
+Modules 
+ModuleID (PK)
+InstanceID (FK)
+ModuleName
+Description
+
+Activities
+ActivityID (PK)
+ModuleID (FK)
+ActivityName
+Level (1-4)
+
+UserProgress 
+ProgressID (PK)
+UserID (FK)
+ActivityID (FK)
+StatusID (FK)
+DateCompleted
+
+Challenges
+ChallengeID (PK)
+ModuleID (FK)
+ChallengeType
+Description
+
+UserChallenges
+UserChallengeID (PK)
+ChallengeID (FK)
+UserID (FK)
+StatusID (FK)
+DateCompleted
+
+Status
+StatusID (PK)
+StatusName
+Description
+
+

@@ -1,0 +1,7 @@
+__pycache__/
+.vscode/
+.DS_store
+.env
+/node_modules
+.venv
+/db-presentation.sqlite3

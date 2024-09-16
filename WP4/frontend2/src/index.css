@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  background-color: rgb(247, 243, 231);
+}
+
+.navbar {
+  background-color: rgb(187, 21, 21);
+  color: white;
+  height: 10vh;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.navLogo {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.navlink {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.navlink:hover {
+  color: black;
+}
+
+.footer {
+  background-color: rgb(187, 21, 21);
+  color: white;
+  position: fixed;
+  text-align: center;
+  width: 100vw;
+  bottom: 0;
+}
+
+
+.contentHomepage {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.homepageInfo, .courseInfo, .domainInfo{
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.courseInfo, .domainInfo {
+  border: 1px solid black;
+  text-align: center;
+  background-color: white;
+}
+
+.courseInfo:hover, .domainInfo:hover {
+  background-color: rgb(187, 21, 21);
+  color: white;
+}
+
+.pageTitle {
+  margin-left: 20vw;
+}
