@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "expo": "^50.0.17",
-    "react-native-web": "~0.19.6",
+    "react-native-web": "~0.19.12",
     "react-dom": "18.2.0",
     "@expo/metro-runtime": "~3.1.3"
   }
